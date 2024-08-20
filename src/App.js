@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   const weekDays = [
     { day: 'Segunda', number: 10 },
-    { day: 'Terça', number: 2 },
+    { day: 'Terça', number: 3 },
     { day: 'Quarta', number: 0 },
     { day: 'Quinta', number: 0 },
     { day: 'Sexta', number: 0 },
