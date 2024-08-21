@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/week-day-reset-counter/static/css/main.2066fe44.css",
-    "main.js": "/week-day-reset-counter/static/js/main.e23b22b3.js",
+    "main.js": "/week-day-reset-counter/static/js/main.f1a4a1ba.js",
     "index.html": "/week-day-reset-counter/index.html",
     "main.2066fe44.css.map": "/week-day-reset-counter/static/css/main.2066fe44.css.map",
-    "main.e23b22b3.js.map": "/week-day-reset-counter/static/js/main.e23b22b3.js.map"
+    "main.f1a4a1ba.js.map": "/week-day-reset-counter/static/js/main.f1a4a1ba.js.map"
   },
   "entrypoints": [
     "static/css/main.2066fe44.css",
-    "static/js/main.e23b22b3.js"
+    "static/js/main.f1a4a1ba.js"
   ]
 }
