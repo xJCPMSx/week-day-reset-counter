@@ -7,7 +7,7 @@ function App() {
   const weekDays = [
     { day: 'Segunda', number: 10 },
     { day: 'Terça', number: 3 },
-    { day: 'Quarta', number: 5 },
+    { day: 'Quarta', number: 9 },
     { day: 'Quinta', number: 0 },
     { day: 'Sexta', number: 0 },
   ];
