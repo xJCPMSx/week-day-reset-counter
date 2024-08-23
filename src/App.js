@@ -8,8 +8,8 @@ function App() {
     { day: 'Segunda', number: 10 },
     { day: 'Terça', number: 3 },
     { day: 'Quarta', number: 11 },
-    { day: 'Quinta', number: 7 },
-    { day: 'Sexta', number: 0 },
+    { day: 'Quinta', number: 9 },
+    { day: 'Sexta', number: 2 },
   ];
 
   return (
