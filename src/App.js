@@ -86,7 +86,9 @@ function App() {
                     ))}
                 </div>
             )}
-            <button onClick={handleDownloadWeeks}>Baixar Semanas Salvas</button>
+            <div className="button-container">
+                <button onClick={handleDownloadWeeks}>Baixar Semanas Salvas</button>
+            </div>
         </div>
     );
 }

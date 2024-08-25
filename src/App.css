@@ -56,3 +56,9 @@
   color: #333;
   font-weight: bold;
 }
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Alinha o botão à direita */
+  margin: 20px; /* Ajuste a margem conforme necessário */
+}
