@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import WeekDayCard from './WeekDayCard';
-import { saveWeek, getSavedWeeks, clearWeeks } from './db';
+// Importando semanas salvas do arquivo local
+import { savedWeeks as initialSavedWeeks } from './savedWeeks';
+
+// Função para criar e baixar o arquivo .js com os dados das semanas
+const downloadWeeksData = (weeks) => {
+    const fileContent = `
+        // Dados das semanas salvas
+        export const savedWeeks = ${JSON.stringify(weeks, null, 2)};
+    `;
+
+    const blob = new Blob([fileContent], { type: 'text/javascript' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'savedWeeks.js'; // Nome do arquivo a ser baixado
+    link.click();
+    URL.revokeObjectURL(url);
+};
 
 function App() {
     const [activeTab, setActiveTab] = useState('current');
-    const [savedWeeks, setSavedWeeks] = useState([]);
+    const [savedWeeks, setSavedWeeks] = useState(initialSavedWeeks || []);
 
     const currentWeek = [
         { day: 'Segunda', number: 10 },
@@ -15,29 +32,19 @@ function App() {
         { day: 'Sexta', number: 2 },
     ];
 
-    useEffect(() => {
-        const fetchWeeks = async () => {
-            const weeks = await getSavedWeeks();
-            setSavedWeeks(weeks);
-        };
-        fetchWeeks();
-    }, []);
-
-    const handleSaveWeek = async () => {
+    const handleSaveWeek = () => {
         const now = new Date();
         const startOfWeek = new Date(now);
-        startOfWeek.setDate(now.getDate() - now.getDay() + 1); // Segunda-feira
+        startOfWeek.setDate(now.getDate() - now.getDay() + 1);
         const endOfWeek = new Date(startOfWeek);
-        endOfWeek.setDate(startOfWeek.getDate() + 4); // Sexta-feira
+        endOfWeek.setDate(startOfWeek.getDate() + 4);
 
         const options = { month: 'short', day: 'numeric' };
         const formattedStart = startOfWeek.toLocaleDateString(undefined, options);
         const formattedEnd = endOfWeek.toLocaleDateString(undefined, options);
         const dateRange = `${formattedStart} - ${formattedEnd}`;
 
-        // Verificar se a semana já está salva
         const isDuplicate = savedWeeks.some(week => week.dateRange === dateRange);
-
         if (isDuplicate) {
             alert("Esta semana já está salva!");
             return;
@@ -45,13 +52,10 @@ function App() {
 
         const newWeek = { week: currentWeek, dateRange };
         setSavedWeeks([...savedWeeks, newWeek]);
-
-        await saveWeek(newWeek);
     };
 
-    const handleClearWeeks = async () => {
-        await clearWeeks();
-        setSavedWeeks([]);
+    const handleDownloadWeeks = () => {
+        downloadWeeksData(savedWeeks); // Chama a função para criar e baixar o arquivo .js
     };
 
     return (
@@ -77,12 +81,12 @@ function App() {
                                 {savedWeek.week.map((dayData, dayIndex) => (
                                     <WeekDayCard key={dayIndex} day={dayData.day} number={dayData.number} />
                                 ))}
-                                <button onClick={handleClearWeeks}>Limpar Todas as Semanas</button>
                             </div>
                         </div>
                     ))}
                 </div>
             )}
+            <button onClick={handleDownloadWeeks}>Baixar Semanas Salvas</button>
         </div>
     );
 }
