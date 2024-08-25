@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import WeekDayCard from './WeekDayCard';
-// Importando semanas salvas do arquivo local
 import { savedWeeks as initialSavedWeeks } from './savedWeeks';
 
-// Função para criar e baixar o arquivo .js com os dados das semanas
 const downloadWeeksData = (weeks) => {
     const fileContent = `
         // Dados das semanas salvas
@@ -15,7 +13,7 @@ const downloadWeeksData = (weeks) => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'savedWeeks.js'; // Nome do arquivo a ser baixado
+    link.download = 'savedWeeks.js';
     link.click();
     URL.revokeObjectURL(url);
 };
@@ -55,7 +53,7 @@ function App() {
     };
 
     const handleDownloadWeeks = () => {
-        downloadWeeksData(savedWeeks); // Chama a função para criar e baixar o arquivo .js
+        downloadWeeksData(savedWeeks);
     };
 
     return (
@@ -81,14 +79,15 @@ function App() {
                                 {savedWeek.week.map((dayData, dayIndex) => (
                                     <WeekDayCard key={dayIndex} day={dayData.day} number={dayData.number} />
                                 ))}
+                                <div className="button-container">
+                                    <button onClick={handleDownloadWeeks}>Baixar Semanas Salvas</button>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
             )}
-            <div className="button-container">
-                <button onClick={handleDownloadWeeks}>Baixar Semanas Salvas</button>
-            </div>
+            
         </div>
     );
 }
