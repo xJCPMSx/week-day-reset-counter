@@ -23,7 +23,7 @@ function App() {
     const [savedWeeks, setSavedWeeks] = useState(initialSavedWeeks || []);
 
     const currentWeek = [
-        { day: 'Segunda', number: 3 },
+        { day: 'Segunda', number: 9 },
         { day: 'Terça', number: 0 },
         { day: 'Quarta', number: 0 },
         { day: 'Quinta', number: 0 },
