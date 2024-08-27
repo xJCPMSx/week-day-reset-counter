@@ -24,7 +24,7 @@ function App() {
 
     const currentWeek = [
         { day: 'Segunda', number: 9 },
-        { day: 'Terça', number: 0 },
+        { day: 'Terça', number: 9 },
         { day: 'Quarta', number: 0 },
         { day: 'Quinta', number: 0 },
         { day: 'Sexta', number: 0 },
