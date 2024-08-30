@@ -27,7 +27,7 @@ function App() {
         { day: 'Terça', number: 11 },
         { day: 'Quarta', number: 12 },
         { day: 'Quinta', number: 5 },
-        { day: 'Sexta', number: 0 },
+        { day: 'Sexta', number: 3 },
     ];
 
     const handleSaveWeek = () => {
