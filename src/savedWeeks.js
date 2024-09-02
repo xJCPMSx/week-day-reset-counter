@@ -49,7 +49,7 @@
                 "number": 3
               }
             ],
-            "dateRange": "2 de set. - 6 de set."
+            "dateRange": "26 de ago. - 30 de ago."
           }
         ];
             
