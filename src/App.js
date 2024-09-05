@@ -26,7 +26,7 @@ function App() {
         { day: 'Segunda', number: 2 },
         { day: 'Terça', number: 3 },
         { day: 'Quarta', number: 6 },
-        { day: 'Quinta', number: 0 },
+        { day: 'Quinta', number: 2 },
         { day: 'Sexta', number: 0 },
     ];
 
