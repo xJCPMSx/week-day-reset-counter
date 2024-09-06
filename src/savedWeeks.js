@@ -50,6 +50,31 @@
               }
             ],
             "dateRange": "26 de ago. - 30 de ago."
+          },
+          {
+            "week": [
+              {
+                "day": "Segunda",
+                "number": 2
+              },
+              {
+                "day": "Terça",
+                "number": 3
+              },
+              {
+                "day": "Quarta",
+                "number": 6
+              },
+              {
+                "day": "Quinta",
+                "number": 2
+              },
+              {
+                "day": "Sexta",
+                "number": 1
+              }
+            ],
+            "dateRange": "2 de set. - 6 de set."
           }
         ];
             
