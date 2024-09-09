@@ -55,23 +55,23 @@
             "week": [
               {
                 "day": "Segunda",
-                "number": 2
-              },
-              {
-                "day": "Terça",
                 "number": 3
               },
               {
+                "day": "Terça",
+                "number": 0
+              },
+              {
                 "day": "Quarta",
-                "number": 6
+                "number": 0
               },
               {
                 "day": "Quinta",
-                "number": 2
+                "number": 0
               },
               {
                 "day": "Sexta",
-                "number": 1
+                "number": 0
               }
             ],
             "dateRange": "2 de set. - 6 de set."
