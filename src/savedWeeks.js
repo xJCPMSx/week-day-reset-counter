@@ -75,6 +75,31 @@
               }
             ],
             "dateRange": "2 de set. - 6 de set."
+          },
+          {
+            "week": [
+              {
+                "day": "Segunda",
+                "number": 5
+              },
+              {
+                "day": "Terça",
+                "number": 5
+              },
+              {
+                "day": "Quarta",
+                "number": 6
+              },
+              {
+                "day": "Quinta",
+                "number": 7
+              },
+              {
+                "day": "Sexta",
+                "number": 6
+              }
+            ],
+            "dateRange": "9 de set. - 13 de set."
           }
         ];
             
